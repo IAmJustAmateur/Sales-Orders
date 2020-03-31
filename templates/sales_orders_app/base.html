@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sales and Orders</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <ul class="navbar-nav">
+          <li><a class="navbar-brand" href="#">Customers Sales Orders</a></li>
+          <li class="nav-item">
+            <a class = "nav-link" href="index.html"></a>
+          </li>
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:orders' %}">ORDERS</a>
+          </li>
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:index' %}">Index</a>
+          </li>
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:CustomerForm' %}">Customer Registration Form</a>
+          </li>
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:customers' %}">Customers List</a>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:user_login' %}">Login</a>
+          </li> -->
+
+          <!-- Will be changed after Registration -->
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:OrderForm' %}">Order Form</a>
+          </li>
+
+          {% if user.is_authenticated %}
+            <li> <a class='nav-link'  href="{% url 'logout' %}">Logout</a> </li>
+
+          {% else %}
+          <li class="nav-item">
+            <a class = "nav-link" href="{% url 'sales_orders_app:user_login' %}">Login</a>
+          </li>
+
+          {% endif %}
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <div class="container">
+      {% block body_block %}
+        <h1>This is base page</h1>
+      {% endblock %}
+
+    </div>
+
+  </body>
+</html>

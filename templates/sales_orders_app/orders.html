@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+ {% extends "sales_orders_app/base.html" %}
+  {% block body_block %}
+    <h1>Sales & Orders App</h1>
+    <h2>Orders page</h2>
+    <h2>There are all orders</h2>
+    {% if orders %}
+      <ol>
+        {% for order in orders %}
+        <p>
+          <li>
+            <ul>
+              <li>Customer Name: <em>{{order.customer.user.username}}</em></li>
+              <li>vendor code: {{order.vendor_code}}</li>
+              <li>color: {{order.color}}</li>
+              <li>size: {{order.size}}</li>
+              <li>executed: {{order.executed}}</li>
+            </ul>
+          </li>
+        </p>
+        {% endfor %}
+      </ol>
+    {% endif %}
+
+  {% endblock %}

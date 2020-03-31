@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+ {% extends "sales_orders_app/base.html" %}
+  {% block body_block %}
+    <h1>Customers list</h1>
+
+    {% if customers %}
+    <ol>
+      {% for customer in customers %}
+        <p>
+          <li>
+            <ul>
+              <li>Customer Name: <em>{{customer.user.username}}</em></li>
+              <li>phone: <em>{{customer.phone}}</em></li>
+              <li>info: <em>{{customer.info}}</em></li>
+            </ul>
+          </li>
+        </p>
+      {% endfor %}
+
+    </ol>
+     <p>Are you happy, <em>{{name}}</em>?</p>
+
+    {% endif %}
+
+  {% endblock %}
