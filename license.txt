@@ -1,0 +1,2 @@
+This is Licence.txt file
+We should append it later
