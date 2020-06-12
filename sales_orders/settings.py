@@ -25,9 +25,9 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'h637&ertl_29gmbh!&x%gt&5ldnvyxvp6z#q18_s1qnrm@=&1%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["sales-orders-test.herokuapp.com/", '127.0.0.1']
 
 
 # Application definition
